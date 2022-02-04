@@ -2,13 +2,22 @@ const express = require("express");
 
 const app = express();
 
+app.use(express.urlencoded({ extended: false }));
+
 app.get("/currenttime", function (req, res) {
   const date = new Date().toISOString();
   res.send(`<h1>${date}</h1>`);
 });
 
 app.get("/", function (req, res) {
-  res.send("<h1>Hello World!</h1>");
+  res.send(
+    `<form action="/user-data" method="POST"><label>Your Name</label><input type="text" name="username"><button>Submit</button></form>`
+  );
+});
+
+app.post("/user-data", function (req, res) {
+  const userName = req.body.username;
+  res.send(`your username is ${userName}`);
 });
 
 app.listen(3000);
