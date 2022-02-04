@@ -1,0 +1,23 @@
+{
+  "name": "js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.17.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rhenaldoaryap/node-js.git"
+  },
+  "author": "Rhenaldo Arya Pangestu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rhenaldoaryap/node-js/issues"
+  },
+  "homepage": "https://github.com/rhenaldoaryap/node-js#readme"
+}
