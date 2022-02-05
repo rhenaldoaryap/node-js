@@ -1,3 +1,5 @@
+require("fs");
+
 const express = require("express");
 
 const app = express();
@@ -17,7 +19,8 @@ app.get("/", function (req, res) {
 
 app.post("/user-data", function (req, res) {
   const userName = req.body.username;
-  res.send(`your username is ${userName}`);
+  console.log(userName);
+  res.send(`<h1>Username stored!</h1>`);
 });
 
 app.listen(3000);
