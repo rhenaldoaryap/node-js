@@ -22,7 +22,13 @@ app.post("/user-data", function (req, res) {
   const userName = req.body.username;
 
   const filePath = path.join(__dirname, "data", "users.json");
-  fs.writeFileSync();
+  const readFile = fs.readFileSync(filePath);
+
+  const existingUser = JSON.parse(readFile);
+
+  existingUser.push(userName);
+
+  fs.writeFileSync(filePath, JSON.stringify(existingUser));
 
   res.send(`<h1>Username stored!</h1>`);
 });
