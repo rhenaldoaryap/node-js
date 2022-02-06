@@ -33,6 +33,23 @@ app.post("/user-data", function (req, res) {
   res.send(`<h1>Username stored!</h1>`);
 });
 
+app.get("/users", function (req, res) {
+  const filePath = path.join(__dirname, "data", "users.json");
+
+  const readFile = fs.readFileSync(filePath);
+  const existingUser = JSON.parse(readFile);
+
+  let responseData = "<ul>";
+
+  for (const user of existingUser) {
+    responseData += "<li>" + user + "</li>";
+  }
+
+  responseData += "</ul>";
+
+  res.send(responseData);
+});
+
 app.listen(3000);
 
 // function handleRequest(request, response) {
